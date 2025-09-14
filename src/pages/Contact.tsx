@@ -92,12 +92,6 @@ const Contact = () => {
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         
         <div className="relative z-10 max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          {/* Contact Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-md border border-primary/30 px-8 py-4 mb-10">
-            <MessageCircle className="h-6 w-6 text-primary" />
-            <span className="text-primary font-poppins font-bold tracking-wider text-base">GET IN TOUCH WITH US</span>
-          </div>
-          
           <h1 className="font-playfair text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-dark-foreground mb-8 leading-tight">
             Contact <span className="text-primary bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent drop-shadow-2xl">Us</span>
           </h1>

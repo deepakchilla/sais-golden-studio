@@ -182,7 +182,10 @@ const PortfolioDetail = () => {
             <Button
               variant="outline"
               size="sm"
-              onClick={() => navigate('/portfolio')}
+              onClick={() => {
+                navigate('/portfolio');
+                window.scrollTo(0, 0);
+              }}
               className="border-2 border-white/70 text-white bg-transparent hover:bg-white hover:text-primary-dark font-semibold"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
@@ -380,7 +383,7 @@ const PortfolioDetail = () => {
                     </Button>
                   </Link>
                   <Link to="/contact" className="block">
-                    <Button variant="outline" size="sm" className="w-full border-primary/30 text-primary-dark-foreground hover:bg-primary/10 hover:text-primary-dark">
+                    <Button variant="outline" size="sm" className="w-full border-2 border-white/70 text-white bg-transparent hover:bg-white hover:text-primary-dark font-semibold">
                       Get in Touch
                     </Button>
                   </Link>

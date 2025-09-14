@@ -22,6 +22,12 @@ const Navigation = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
 
+  // Helper function to navigate and scroll to top
+  const navigateAndScrollToTop = (path: string) => {
+    navigate(path);
+    window.scrollTo(0, 0);
+  };
+
   // Auth state management
   useEffect(() => {
     // Get initial session
@@ -63,7 +69,7 @@ const Navigation = () => {
     }
   };
 
-  // Navigation items (excluding Login for authenticated users)
+  // Navigation items (including Login for non-authenticated users)
   const navItems = [
     { name: 'Home', path: '/' },
     { name: 'Services', path: '/services' },
@@ -82,38 +88,36 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <div onClick={() => navigateAndScrollToTop('/')} className="cursor-pointer flex items-center">
             <div className="text-primary-dark-foreground">
               <span className="font-serif italic font-medium text-2xl tracking-wide text-white">SRI SAI</span>
               <span className="text-primary ml-2 font-serif italic font-medium text-2xl tracking-wide">DIGITAL</span>
             </div>
-          </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigationItems.map((item) => (
-              <Link
+              <div
                 key={item.name}
-                to={item.path}
-                className={`font-poppins font-medium transition-all duration-300 ${
+                onClick={() => navigateAndScrollToTop(item.path)}
+                className={`cursor-pointer font-poppins font-medium transition-all duration-300 ${
                   isActive(item.path)
                     ? 'text-primary gold-accent'
                     : 'text-primary-dark-foreground hover:text-primary'
                 }`}
               >
                 {item.name}
-              </Link>
+              </div>
             ))}
             
             {/* Book Now Button */}
-            <Link to="/booking">
-              <Button variant="hero" size="sm">
-                Book Now
-              </Button>
-            </Link>
+            <Button variant="hero" size="sm" onClick={() => navigateAndScrollToTop('/booking')}>
+              Book Now
+            </Button>
             
-            {/* Profile Dropdown or Login */}
-            {user ? (
+            {/* Profile Dropdown (only for authenticated users) */}
+            {user && (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="outline" size="sm" className="relative h-10 w-10 rounded-full border-primary/20 hover:border-primary/40 bg-primary/10 hover:bg-primary/20 p-0">
@@ -131,29 +135,21 @@ const Navigation = () => {
                     </div>
                   </DropdownMenuLabel>
                   <DropdownMenuSeparator />
-                  <DropdownMenuItem asChild>
-                    <Link to="/profile" className="flex items-center cursor-pointer">
-                      <User className="mr-2 h-4 w-4" />
-                      My Profile
-                    </Link>
+                  <DropdownMenuItem onClick={() => navigateAndScrollToTop('/profile')} className="cursor-pointer">
+                    <User className="mr-2 h-4 w-4" />
+                    My Profile
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/booking" className="flex items-center cursor-pointer">
-                      <BookOpen className="mr-2 h-4 w-4" />
-                      My Bookings
-                    </Link>
+                  <DropdownMenuItem onClick={() => navigateAndScrollToTop('/booking')} className="cursor-pointer">
+                    <BookOpen className="mr-2 h-4 w-4" />
+                    My Bookings
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/portfolio" className="flex items-center cursor-pointer">
-                      <Heart className="mr-2 h-4 w-4" />
-                      Favorites
-                    </Link>
+                  <DropdownMenuItem onClick={() => navigateAndScrollToTop('/portfolio')} className="cursor-pointer">
+                    <Heart className="mr-2 h-4 w-4" />
+                    Favorites
                   </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link to="/settings" className="flex items-center cursor-pointer">
-                      <Settings className="mr-2 h-4 w-4" />
-                      Settings
-                    </Link>
+                  <DropdownMenuItem onClick={() => navigateAndScrollToTop('/settings')} className="cursor-pointer">
+                    <Settings className="mr-2 h-4 w-4" />
+                    Settings
                   </DropdownMenuItem>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem
@@ -165,15 +161,6 @@ const Navigation = () => {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-            ) : (
-              !loading && (
-                <Link to="/auth">
-                  <Button variant="outline" size="sm" className="border-primary/20 hover:border-primary/40 text-primary hover:text-primary">
-                    <User className="mr-2 h-4 w-4" />
-                    Login
-                  </Button>
-                </Link>
-              )
             )}
           </div>
 
@@ -194,50 +181,65 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden py-4 space-y-4">
             {navigationItems.map((item) => (
-              <Link
+              <div
                 key={item.name}
-                to={item.path}
-                onClick={() => setIsOpen(false)}
-                className={`block font-poppins font-medium transition-colors ${
+                onClick={() => {
+                  navigateAndScrollToTop(item.path);
+                  setIsOpen(false);
+                }}
+                className={`cursor-pointer block font-poppins font-medium transition-colors ${
                   isActive(item.path)
                     ? 'text-primary'
                     : 'text-primary-dark-foreground hover:text-primary'
                 }`}
               >
                 {item.name}
-              </Link>
+              </div>
             ))}
             
             {/* Mobile Book Now Button */}
-            <Link to="/booking" onClick={() => setIsOpen(false)}>
-              <Button variant="hero" size="sm" className="w-full">
-                Book Now
-              </Button>
-            </Link>
+            <Button variant="hero" size="sm" className="w-full" onClick={() => {
+              navigateAndScrollToTop('/booking');
+              setIsOpen(false);
+            }}>
+              Book Now
+            </Button>
             
-            {/* Mobile Profile Section */}
-            {user ? (
+            {/* Mobile Profile Section (only for authenticated users) */}
+            {user && (
               <div className="border-t border-border pt-4 space-y-2">
                 <div className="px-2 py-2">
                   <p className="text-sm font-medium text-foreground">Signed in as</p>
                   <p className="text-xs text-muted-foreground font-poppins">{user.email}</p>
                 </div>
-                <Link to="/profile" onClick={() => setIsOpen(false)} className="flex items-center px-2 py-2 text-sm text-foreground hover:text-primary transition-colors">
+                <div onClick={() => {
+                  navigateAndScrollToTop('/profile');
+                  setIsOpen(false);
+                }} className="cursor-pointer flex items-center px-2 py-2 text-sm text-foreground hover:text-primary transition-colors">
                   <User className="mr-2 h-4 w-4" />
                   My Profile
-                </Link>
-                <Link to="/booking" onClick={() => setIsOpen(false)} className="flex items-center px-2 py-2 text-sm text-foreground hover:text-primary transition-colors">
+                </div>
+                <div onClick={() => {
+                  navigateAndScrollToTop('/booking');
+                  setIsOpen(false);
+                }} className="cursor-pointer flex items-center px-2 py-2 text-sm text-foreground hover:text-primary transition-colors">
                   <BookOpen className="mr-2 h-4 w-4" />
                   My Bookings
-                </Link>
-                <Link to="/portfolio" onClick={() => setIsOpen(false)} className="flex items-center px-2 py-2 text-sm text-foreground hover:text-primary transition-colors">
+                </div>
+                <div onClick={() => {
+                  navigateAndScrollToTop('/portfolio');
+                  setIsOpen(false);
+                }} className="cursor-pointer flex items-center px-2 py-2 text-sm text-foreground hover:text-primary transition-colors">
                   <Heart className="mr-2 h-4 w-4" />
                   Favorites
-                </Link>
-                <Link to="/settings" onClick={() => setIsOpen(false)} className="flex items-center px-2 py-2 text-sm text-foreground hover:text-primary transition-colors">
+                </div>
+                <div onClick={() => {
+                  navigateAndScrollToTop('/settings');
+                  setIsOpen(false);
+                }} className="cursor-pointer flex items-center px-2 py-2 text-sm text-foreground hover:text-primary transition-colors">
                   <Settings className="mr-2 h-4 w-4" />
                   Settings
-                </Link>
+                </div>
                 <button 
                   onClick={() => {
                     setIsOpen(false);
@@ -249,15 +251,6 @@ const Navigation = () => {
                   Sign out
                 </button>
               </div>
-            ) : (
-              !loading && (
-                <Link to="/auth" onClick={() => setIsOpen(false)}>
-                  <Button variant="outline" size="sm" className="w-full border-primary/20 hover:border-primary/40 text-primary hover:text-primary">
-                    <User className="mr-2 h-4 w-4" />
-                    Login
-                  </Button>
-                </Link>
-              )
             )}
           </div>
         )}

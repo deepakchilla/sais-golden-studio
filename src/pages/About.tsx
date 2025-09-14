@@ -63,11 +63,6 @@ const About = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               {/* Intro Badge */}
-              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-6 py-3 mb-8">
-                <Camera className="h-5 w-5 text-primary" />
-                <span className="text-primary font-poppins font-semibold tracking-wide text-sm">ABOUT OUR STUDIO</span>
-              </div>
-              
               <h1 className="font-playfair text-5xl sm:text-6xl font-bold text-foreground mb-8 leading-tight">
                 About <span className="text-primary bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Sri Sai Digital</span>
                 <span className="block text-3xl sm:text-4xl text-muted-foreground mt-2">Photo Studio</span>
