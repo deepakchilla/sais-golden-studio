@@ -1,9 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Camera, Video, User, FileImage, Edit, Book, Building, Heart, Briefcase } from 'lucide-react';
-import weddingImage from '@/assets/wedding-service.jpg';
-import portraitImage from '@/assets/portrait-service.jpg';
-import corporateImage from '@/assets/corporate-service.jpg';
+import weddingImage from '/src/assets/wedding-service.jpg';
+import portraitImage from '/src/assets/portrait-service.jpg';
+import corporateImage from '/src/assets/corporate-service.jpg';
 import BookingDialog from '@/components/BookingDialog';
 
 const Services = () => {
@@ -67,7 +67,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="min-h-screen">
       {/* Header Section */}
       <section className="py-16 bg-warm-gray">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">

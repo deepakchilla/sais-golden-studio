@@ -1,8 +1,9 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Camera, Award, Users, Heart, Star, Clock } from 'lucide-react';
-import studioImage from '@/assets/studio-exterior.jpg';
-import portraitImage from '@/assets/portrait-service.jpg';
+import { Link } from 'react-router-dom';
+import studioImage from '/src/assets/studio-exterior.jpg';
+import portraitImage from '/src/assets/portrait-service.jpg';
 
 const About = () => {
   const achievements = [
@@ -10,25 +11,25 @@ const About = () => {
       icon: Camera,
       number: '500+',
       title: 'Projects Completed',
-      description: 'Successfully delivered high-quality photography services',
+      description: 'Successfully delivered high-quality photography services across weddings, corporate events, and portraits',
     },
     {
       icon: Users,
       number: '450+',
       title: 'Happy Clients',
-      description: 'Building lasting relationships through exceptional service',
+      description: 'Building lasting relationships through exceptional service and exceeding client expectations',
     },
     {
       icon: Award,
-      number: '5+',
+      number: '8+',
       title: 'Years Experience',
-      description: 'Professional photography expertise and artistic vision',
+      description: 'Professional photography expertise with artistic vision and technical mastery',
     },
     {
       icon: Star,
-      number: '4.9',
-      title: 'Average Rating',
-      description: 'Consistently rated excellent by our clients',
+      number: '4.9/5',
+      title: 'Client Rating',
+      description: 'Consistently rated excellent by our clients with 98% satisfaction rate and repeat business',
     },
   ];
 
@@ -51,36 +52,78 @@ const About = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <section className="py-20 bg-warm-gray">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <div className="min-h-screen">
+      {/* Enhanced Hero Section */}
+      <section className="py-24 bg-gradient-to-br from-warm-gray via-background to-warm-gray relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-primary/5 to-accent/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-primary/5 to-accent/5 rounded-full blur-3xl" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
-              <h1 className="font-playfair text-4xl sm:text-5xl font-bold text-foreground mb-6">
-                About <span className="text-primary">Sri Sai Digital</span> Photo Studio
+              {/* Intro Badge */}
+              <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-6 py-3 mb-8">
+                <Camera className="h-5 w-5 text-primary" />
+                <span className="text-primary font-poppins font-semibold tracking-wide text-sm">ABOUT OUR STUDIO</span>
+              </div>
+              
+              <h1 className="font-playfair text-5xl sm:text-6xl font-bold text-foreground mb-8 leading-tight">
+                About <span className="text-primary bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Sri Sai Digital</span>
+                <span className="block text-3xl sm:text-4xl text-muted-foreground mt-2">Photo Studio</span>
               </h1>
-              <p className="text-lg text-muted-foreground font-poppins mb-6 leading-relaxed">
-                Established with a passion for capturing life's most precious moments, Sri Sai Digital Photo Studio 
-                has been serving the community with professional photography services that blend artistic vision 
-                with technical excellence.
-              </p>
-              <p className="text-lg text-muted-foreground font-poppins mb-8 leading-relaxed">
-                Our journey began with a simple belief: every moment deserves to be captured beautifully. 
-                From intimate portraits to grand celebrations, we approach each project with dedication, 
-                creativity, and attention to detail that sets us apart.
-              </p>
-              <Button variant="gold" size="lg">
-                View Our Work
-              </Button>
+              
+              <div className="space-y-6 text-lg text-muted-foreground font-poppins leading-relaxed">
+                <p>
+                  <span className="text-primary font-semibold">Established in 2016</span> with a passion for capturing life's most precious moments, 
+                  Sri Sai Digital Photo Studio has been serving the community with professional photography services 
+                  that blend <span className="text-primary font-semibold">artistic vision with technical excellence</span>.
+                </p>
+                <p>
+                  Our journey began with a simple belief: <span className="text-foreground font-semibold italic">
+                  "every moment deserves to be captured beautifully."</span> From intimate portraits to grand celebrations, 
+                  we approach each project with <span className="text-primary font-semibold">dedication, creativity, and attention to detail</span> 
+                  that sets us apart in the industry.
+                </p>
+                <p>
+                  With over <span className="text-primary font-semibold">500+ successful projects</span> and a 
+                  <span className="text-primary font-semibold">98% client satisfaction rate</span>, we've built our reputation 
+                  on delivering exceptional results that exceed expectations.
+                </p>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 mt-10">
+                <Link to="/portfolio">
+                  <Button variant="gold" size="lg" className="min-w-[180px] transform hover:scale-105 transition-all duration-300">
+                    <Award className="mr-2 h-5 w-5" />
+                    View Our Work
+                  </Button>
+                </Link>
+                <Link to="/contact">
+                  <Button variant="outline" size="lg" className="min-w-[180px] transform hover:scale-105 transition-all duration-300">
+                    <Users className="mr-2 h-5 w-5" />
+                    Meet Our Team
+                  </Button>
+                </Link>
+              </div>
             </div>
-            <div className="relative">
+            
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
               <img 
                 src={studioImage} 
-                alt="Sri Sai Digital Photo Studio"
-                className="rounded-2xl shadow-elegant w-full h-[500px] object-cover"
+                alt="Sri Sai Digital Photo Studio - Professional Photography Services"
+                className="relative rounded-2xl shadow-elegant w-full h-[600px] object-cover transform group-hover:scale-[1.02] transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/40 to-transparent rounded-2xl" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/40 via-transparent to-transparent rounded-2xl" />
+              
+              {/* Studio Info Overlay */}
+              <div className="absolute bottom-6 left-6 right-6 bg-background/90 backdrop-blur-md border border-primary/20 p-6">
+                <h3 className="font-playfair text-xl font-bold text-foreground mb-2">Our Professional Studio</h3>
+                <p className="text-muted-foreground font-poppins text-sm leading-relaxed">
+                  State-of-the-art equipment and professionally designed spaces for every photography need
+                </p>
+              </div>
             </div>
           </div>
         </div>

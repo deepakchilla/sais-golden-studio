@@ -46,61 +46,133 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      title: 'Our Location',
-      details: ['123 Photography Street', 'Digital Plaza, 2nd Floor', 'City, State 560001'],
+      title: 'Studio Location',
+      details: [
+        'Sri Sai Digital Photo Studio',
+        'Digital Plaza, 2nd Floor, Shop #23-25',
+        'MG Road, Bangalore, Karnataka 560001'
+      ],
     },
     {
       icon: Phone,
-      title: 'Phone Numbers',
-      details: ['+91 98765 43210', '+91 87654 32109', 'Landline: 080-12345678'],
+      title: 'Phone & WhatsApp',
+      details: [
+        'Primary: +91 98765 43210',
+        'Secondary: +91 87654 32109', 
+        'Landline: 080-2234-5678'
+      ],
     },
     {
       icon: Mail,
-      title: 'Email Address',
-      details: ['info@srisaidigital.com', 'bookings@srisaidigital.com', 'support@srisaidigital.com'],
+      title: 'Email Contacts',
+      details: [
+        'Bookings: bookings@srisaidigital.com',
+        'General: info@srisaidigital.com',
+        'Support: support@srisaidigital.com'
+      ],
     },
     {
       icon: Clock,
-      title: 'Business Hours',
-      details: ['Monday - Saturday: 9:00 AM - 8:00 PM', 'Sunday: 10:00 AM - 6:00 PM', 'Emergency shoots: 24/7'],
+      title: 'Operating Hours',
+      details: [
+        'Mon-Sat: 9:00 AM - 8:00 PM',
+        'Sunday: 10:00 AM - 6:00 PM',
+        'Emergency shoots: Available 24/7'
+      ],
     },
   ];
 
   return (
-    <div className="min-h-screen pt-16">
-      {/* Header Section */}
-      <section className="py-16 bg-warm-gray">
-        <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          <h1 className="font-playfair text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Contact <span className="text-primary">Us</span>
+    <div className="min-h-screen">
+      {/* Enhanced Header Section */}
+      <section className="relative py-24 bg-gradient-to-br from-primary-dark via-primary-dark/95 to-primary-dark overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+        
+        <div className="relative z-10 max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+          {/* Contact Badge */}
+          <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-md border border-primary/30 px-8 py-4 mb-10">
+            <MessageCircle className="h-6 w-6 text-primary" />
+            <span className="text-primary font-poppins font-bold tracking-wider text-base">GET IN TOUCH WITH US</span>
+          </div>
+          
+          <h1 className="font-playfair text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-dark-foreground mb-8 leading-tight">
+            Contact <span className="text-primary bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent drop-shadow-2xl">Us</span>
           </h1>
-          <p className="text-lg text-muted-foreground font-poppins leading-relaxed max-w-2xl mx-auto">
-            Ready to capture your special moments? Get in touch with us today to discuss your 
-            photography needs and book your session.
+          
+          <p className="text-xl sm:text-2xl text-primary-dark-foreground/90 font-poppins leading-relaxed max-w-4xl mx-auto mb-12">
+            Ready to capture your <span className="text-primary font-semibold">special moments</span>? 
+            Get in touch with us today to discuss your photography needs and 
+            <span className="text-primary font-semibold">book your perfect session</span>.
           </p>
+          
+          {/* Quick Contact Stats */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+            <div className="text-center">
+              <h3 className="font-playfair text-3xl font-bold text-primary mb-2">&lt; 2hrs</h3>
+              <p className="text-primary-dark-foreground/80 font-poppins font-medium">Response Time</p>
+            </div>
+            <div className="text-center">
+              <h3 className="font-playfair text-3xl font-bold text-primary mb-2">24/7</h3>
+              <p className="text-primary-dark-foreground/80 font-poppins font-medium">WhatsApp Support</p>
+            </div>
+            <div className="text-center">
+              <h3 className="font-playfair text-3xl font-bold text-primary mb-2">Free</h3>
+              <p className="text-primary-dark-foreground/80 font-poppins font-medium">Consultation Call</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Contact Information */}
-      <section className="py-20 bg-background">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+      {/* Enhanced Contact Information */}
+      <section className="py-24 bg-gradient-to-br from-background via-warm-gray/30 to-background relative">
+        {/* Background Elements */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-primary/5 to-accent/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-primary/5 to-accent/5 rounded-full blur-3xl" />
+        
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Contact Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
             {contactInfo.map((info, index) => (
-              <Card key={index} className="elegant-card text-center">
-                <CardContent className="p-6">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-4">
-                    <info.icon className="h-6 w-6 text-primary" />
+              <Card key={index} className="group bg-background/95 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-primary/10">
+                <CardContent className="p-8 text-center">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/20 mb-6 group-hover:scale-110 group-hover:border-primary/40 transition-all duration-300">
+                    <info.icon className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
                   </div>
-                  <h3 className="font-playfair text-lg font-semibold text-foreground mb-3">
+                  <h3 className="font-playfair text-xl font-bold text-foreground mb-4 group-hover:text-primary transition-colors duration-300">
                     {info.title}
                   </h3>
-                  <div className="space-y-1">
+                  <div className="space-y-2">
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-muted-foreground font-poppins text-sm">
+                      <p key={idx} className="text-muted-foreground font-poppins text-sm leading-relaxed group-hover:text-foreground transition-colors duration-300">
                         {detail}
                       </p>
                     ))}
                   </div>
+                  
+                  {/* Action Button based on card type */}
+                  {info.title.includes('Phone') && (
+                    <Button variant="outline" size="sm" className="mt-4 w-full group-hover:border-primary group-hover:text-primary transition-all duration-300">
+                      Call Now
+                    </Button>
+                  )}
+                  {info.title.includes('Email') && (
+                    <Button variant="outline" size="sm" className="mt-4 w-full group-hover:border-primary group-hover:text-primary transition-all duration-300">
+                      Send Email
+                    </Button>
+                  )}
+                  {info.title.includes('Location') && (
+                    <Button variant="outline" size="sm" className="mt-4 w-full group-hover:border-primary group-hover:text-primary transition-all duration-300">
+                      Get Directions
+                    </Button>
+                  )}
+                  {info.title.includes('Hours') && (
+                    <Button variant="outline" size="sm" className="mt-4 w-full group-hover:border-primary group-hover:text-primary transition-all duration-300">
+                      Book Now
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}

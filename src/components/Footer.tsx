@@ -10,6 +10,7 @@ const Footer = () => {
     { name: 'Portfolio', path: '/portfolio' },
     { name: 'About', path: '/about' },
     { name: 'Contact', path: '/contact' },
+    { name: 'Book Now', path: '/booking' },
   ];
 
   const contactInfo = {
@@ -25,7 +26,7 @@ const Footer = () => {
           {/* Logo & Description */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="bg-gradient-to-r from-primary to-accent p-2 rounded-lg">
+              <div className="bg-gradient-to-r from-primary to-accent p-2">
                 <Camera className="h-6 w-6 text-primary-dark" />
               </div>
               <div className="text-primary-dark-foreground">
@@ -40,7 +41,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-playfair text-lg font-semibold text-foreground mb-4">Quick Links</h3>
+            <h3 className="font-playfair text-lg font-semibold text-primary-dark-foreground mb-4">Quick Links</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -57,7 +58,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="font-playfair text-lg font-semibold text-foreground mb-4">Contact Info</h3>
+            <h3 className="font-playfair text-lg font-semibold text-primary-dark-foreground mb-4">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-2">
                 <MapPin className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
@@ -80,7 +81,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div>
-            <h3 className="font-playfair text-lg font-semibold text-foreground mb-4">Follow Us</h3>
+            <h3 className="font-playfair text-lg font-semibold text-primary-dark-foreground mb-4">Follow Us</h3>
             <div className="flex space-x-4">
               <a
                 href="#"

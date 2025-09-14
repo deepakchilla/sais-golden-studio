@@ -46,7 +46,7 @@ All colors MUST be HSL. Beautiful black & gold elegant theme.
     --destructive-foreground: 0 0% 98%;
 
     /* Design System Variables */
-    --radius: 0.75rem;
+    --radius: 0px;
 
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(220 13% 9%) 0%, hsl(220 13% 15%) 50%, hsl(45 95% 8%) 100%);
@@ -87,11 +87,23 @@ All colors MUST be HSL. Beautiful black & gold elegant theme.
   body {
     @apply bg-background text-foreground font-poppins antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
-    background-image: url('/src/assets/YellowCameraBg.jpg');
+    background-image: url('/src/assets/SecondBg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: -1;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -154,5 +166,106 @@ All colors MUST be HSL. Beautiful black & gold elegant theme.
   /* Custom gradient background utility */
   .bg-gradient-gold {
     background: var(--gradient-gold);
+  }
+  
+  /* Professional Grid Pattern */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  /* Dot Pattern Background */
+  .bg-dot-pattern {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  /* Enhanced Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(45 95% 50% / 0.2); }
+    50% { box-shadow: 0 0 40px hsl(45 95% 50% / 0.4); }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+  
+  /* Parallax and 3D Effects */
+  .transform-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  /* Professional Glassmorphism */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .glass-dark {
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Premium Text Effects */
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(45 95% 50%), hsl(45 85% 60%), hsl(45 95% 45%));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-shadow-elegant {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Hover Effects */
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+  
+  /* Professional Border Gradients */
+  .border-gradient {
+    border: 2px solid;
+    border-image: linear-gradient(135deg, hsl(45 95% 50%), hsl(45 85% 60%)) 1;
+  }
+  
+  /* Loading and Skeleton Effects */
+  .skeleton {
+    background: linear-gradient(90deg, 
+      hsl(220 13% 95%) 0%, 
+      hsl(220 13% 90%) 50%, 
+      hsl(220 13% 95%) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
   }
 }
