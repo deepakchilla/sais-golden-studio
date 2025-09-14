@@ -23,13 +23,13 @@ const About = () => {
       icon: Award,
       number: '8+',
       title: 'Years Experience',
-      description: 'Professional photography expertise with artistic vision and technical mastery',
+      description: 'Photography expertise with artistic vision and technical mastery',
     },
     {
       icon: Star,
       number: '4.9/5',
       title: 'Client Rating',
-      description: 'Consistently rated excellent by our clients with 98% satisfaction rate and repeat business',
+      description: 'Consistently rated excellent by our clients with high satisfaction rate and repeat business',
     },
   ];
 
@@ -112,7 +112,7 @@ const About = () => {
               <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 to-accent/20 blur-lg opacity-75 group-hover:opacity-100 transition-opacity duration-500" />
               <img 
                 src={studioImage} 
-                alt="Sri Sai Digital Photo Studio - Professional Photography Services"
+                alt="Sri Sai Digital Photo Studio - Photography Services"
                 className="relative rounded-2xl shadow-elegant w-full h-[600px] object-cover transform group-hover:scale-[1.02] transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/40 via-transparent to-transparent rounded-2xl" />
@@ -137,7 +137,7 @@ const About = () => {
               Our <span className="text-primary">Achievements</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-poppins">
-              Years of dedication and commitment to excellence have earned us the trust of our clients
+              Years of dedication and commitment have earned us the trust of our clients
             </p>
           </div>
 
@@ -206,7 +206,7 @@ const About = () => {
               Our <span className="text-primary">Values</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-poppins">
-              The principles that guide our work and define our commitment to excellence
+              The principles that guide our work and define our commitment
             </p>
           </div>
 

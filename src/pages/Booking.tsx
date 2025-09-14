@@ -78,9 +78,9 @@ const Booking = () => {
       id: 'printing',
       icon: Book,
       title: 'Album Printing',
-      description: 'Premium photo albums and canvas prints',
+      description: 'Photo albums and canvas prints',
       startingPrice: '₹1,500',
-      features: ['Premium albums', 'Canvas prints', 'Photo frames', 'Custom designs', 'High-quality printing', 'Various sizes']
+      features: ['Photo albums', 'Canvas prints', 'Photo frames', 'Custom designs', 'High-quality printing', 'Various sizes']
     }
   ];
 

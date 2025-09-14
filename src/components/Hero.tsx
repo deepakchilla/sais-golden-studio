@@ -22,11 +22,7 @@ const Hero = () => {
         {/* Content */}
         <div className="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-10">
-            {/* Award Badge */}
-            <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-md border border-primary/30 px-6 py-3 mb-6">
-              <Star className="h-5 w-5 text-primary fill-primary" />
-              <span className="text-primary font-poppins font-semibold tracking-wide">AWARD-WINNING PHOTOGRAPHY STUDIO</span>
-            </div>
+
 
             {/* Main Heading */}
             <div className="space-y-6">
@@ -35,7 +31,7 @@ const Hero = () => {
                 <span className="block text-primary drop-shadow-2xl bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Photo Studio</span>
               </h1>
               <p className="text-xl sm:text-2xl lg:text-3xl text-primary-dark-foreground/95 font-poppins max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
-                Capturing life's most precious moments with <span className="text-primary font-semibold">artistic vision</span> and <span className="text-primary font-semibold">professional excellence</span>
+                Capturing life's most precious moments with <span className="text-primary font-semibold">artistic vision</span> and <span className="text-primary font-semibold">creativity</span>
               </p>
             </div>
 
@@ -99,7 +95,6 @@ const Hero = () => {
               </div>
               <h3 className="font-playfair text-4xl lg:text-5xl font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-300">8+</h3>
               <p className="text-primary-dark-foreground/90 font-poppins font-medium text-lg">Years Experience</p>
-              <p className="text-primary-dark-foreground/70 font-poppins text-sm mt-2">Professional Photography</p>
             </div>
             
             <div className="text-center group cursor-pointer transform hover:scale-105 transition-all duration-300">

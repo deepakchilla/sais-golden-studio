@@ -51,8 +51,8 @@ const Services = () => {
     {
       icon: Book,
       title: 'Album Printing',
-      description: 'Premium quality photo albums, canvas prints, and frames. Custom designs available for weddings and special events.',
-      features: ['Premium albums', 'Canvas prints', 'Photo frames', 'Custom designs', 'High-quality printing', 'Various sizes'],
+      description: 'Quality photo albums, canvas prints, and frames. Custom designs available for weddings and special events.',
+      features: ['Photo albums', 'Canvas prints', 'Photo frames', 'Custom designs', 'High-quality printing', 'Various sizes'],
       price: 'Starting from ₹1,500',
       image: weddingImage,
     },
@@ -72,7 +72,7 @@ const Services = () => {
       <section className="py-16 bg-warm-gray">
         <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
           <h1 className="font-playfair text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Professional Photography <span className="text-primary">Services</span>
+            Photography <span className="text-primary">Services</span>
           </h1>
           <p className="text-lg text-muted-foreground font-poppins leading-relaxed max-w-2xl mx-auto">
             From intimate portraits to grand weddings, we offer comprehensive photography services 

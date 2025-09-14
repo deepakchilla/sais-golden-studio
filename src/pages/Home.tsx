@@ -59,7 +59,7 @@ const Home = () => {
     {
       name: 'Dr. Arun Kumar',
       service: 'Corporate Headshots',
-      text: 'As a medical professional, I needed high-quality headshots for my practice. The team at Sri Sai Digital made me feel comfortable throughout the session and delivered exceptional results. Highly recommended for professional photography.',
+      text: 'As a medical professional, I needed high-quality headshots for my practice. The team at Sri Sai Digital made me feel comfortable throughout the session and delivered exceptional results. Highly recommended.',
       rating: 5,
       location: 'Bangalore',
       avatar: corporateImage,
@@ -96,12 +96,9 @@ const Home = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Enhanced Header */}
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-md border border-primary/30 px-6 py-3 mb-8">
-              <Camera className="h-5 w-5 text-primary" />
-              <span className="text-primary font-poppins font-semibold tracking-wide text-sm">PROFESSIONAL PHOTOGRAPHY SERVICES</span>
-            </div>
+
             <h2 className="font-playfair text-5xl sm:text-6xl font-bold text-primary-dark-foreground mb-8">
-              Our <span className="text-primary bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Premium Services</span>
+              Our <span className="text-primary bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Services</span>
             </h2>
             <p className="text-xl text-primary-dark-foreground/80 max-w-3xl mx-auto font-poppins leading-relaxed">
               From intimate portraits to grand celebrations, we deliver exceptional photography experiences 
@@ -127,10 +124,7 @@ const Home = () => {
                     <service.icon className="h-7 w-7 text-primary-dark drop-shadow-lg" />
                   </div>
                   
-                  {/* Premium Badge */}
-                  <div className="absolute top-6 right-6 bg-background/90 backdrop-blur-sm px-3 py-1 border border-primary/30">
-                    <span className="text-primary font-poppins text-xs font-bold tracking-wider">PREMIUM</span>
-                  </div>
+
                   
                   {/* Hover Content */}
                   <div className="absolute inset-0 flex items-end justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0">
@@ -155,7 +149,7 @@ const Home = () => {
                   {/* Service Features */}
                   <div className="flex items-center gap-2 text-sm text-primary">
                     <CheckCircle className="h-4 w-4" />
-                    <span className="font-poppins font-medium">Professional Quality Guaranteed</span>
+                    <span className="font-poppins font-medium">Quality Guaranteed</span>
                   </div>
                 </CardContent>
               </Card>
@@ -179,7 +173,7 @@ const Home = () => {
               </Link>
             </div>
             <p className="text-primary-dark-foreground/60 font-poppins text-sm mt-4">
-              Free consultation • Same-day booking available • Professional equipment
+              Free consultation • Same-day booking available
             </p>
           </div>
         </div>
@@ -194,17 +188,11 @@ const Home = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Enhanced Header */}
           <div className="text-center mb-20">
-            <div className="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 px-6 py-3 mb-8">
-              <Star className="h-5 w-5 text-primary fill-current" />
-              <span className="text-primary font-poppins font-semibold tracking-wide text-sm">CLIENT TESTIMONIALS</span>
-            </div>
+
             <h2 className="font-playfair text-5xl sm:text-6xl font-bold text-foreground mb-8">
               What Our <span className="text-primary bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">Clients Say</span>
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-poppins leading-relaxed">
-              Don't just take our word for it - hear from our satisfied clients who trust us 
-              <span className="text-primary font-semibold">with their most precious moments</span>
-            </p>
+
           </div>
 
           {/* Enhanced Testimonials Grid */}
@@ -244,44 +232,13 @@ const Home = () => {
                     </div>
                   </div>
                   
-                  {/* Verified Badge */}
-                  <div className="absolute top-6 right-6 bg-primary/10 border border-primary/20 px-3 py-1">
-                    <span className="text-primary font-poppins text-xs font-bold tracking-wider">VERIFIED</span>
-                  </div>
+
                 </CardContent>
               </Card>
             ))}
           </div>
           
-          {/* Trust Indicators */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/20 mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Star className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="font-playfair text-2xl font-bold text-foreground mb-2">4.9/5</h3>
-              <p className="text-muted-foreground font-poppins">Average Rating</p>
-              <p className="text-primary font-poppins text-sm font-semibold">500+ Reviews</p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/20 mb-4 group-hover:scale-110 transition-transform duration-300">
-                <CheckCircle className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="font-playfair text-2xl font-bold text-foreground mb-2">98%</h3>
-              <p className="text-muted-foreground font-poppins">Client Satisfaction</p>
-              <p className="text-primary font-poppins text-sm font-semibold">Guaranteed Quality</p>
-            </div>
-            
-            <div className="text-center group">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 border border-primary/20 mb-4 group-hover:scale-110 transition-transform duration-300">
-                <Camera className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="font-playfair text-2xl font-bold text-foreground mb-2">500+</h3>
-              <p className="text-muted-foreground font-poppins">Projects Completed</p>
-              <p className="text-primary font-poppins text-sm font-semibold">Professional Excellence</p>
-            </div>
-          </div>
+
         </div>
       </section>
 
@@ -292,16 +249,9 @@ const Home = () => {
         <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         
-        {/* Floating Elements */}
-        <div className="absolute top-16 left-8 w-16 h-16 bg-primary/10 backdrop-blur-sm border border-primary/20 transform rotate-45 animate-pulse hidden lg:block" />
-        <div className="absolute bottom-20 right-12 w-12 h-12 bg-accent/15 backdrop-blur-sm border border-accent/30 transform -rotate-12 animate-bounce hidden lg:block" />
-        
+
         <div className="relative z-10 max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          {/* Premium Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-md border border-primary/30 px-8 py-4 mb-10">
-            <Camera className="h-6 w-6 text-primary" />
-            <span className="text-primary font-poppins font-bold tracking-wider text-base">PREMIUM PHOTOGRAPHY EXPERIENCE</span>
-          </div>
+
           
           <h2 className="font-playfair text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-dark-foreground mb-8 leading-tight">
             Ready to Capture Your 
@@ -345,7 +295,7 @@ const Home = () => {
             </div>
             <div className="flex items-center justify-center gap-3 text-primary-dark-foreground/80">
               <CheckCircle className="h-5 w-5 text-primary flex-shrink-0" />
-              <span className="font-poppins font-medium">100% Satisfaction Guarantee</span>
+              <span className="font-poppins font-medium">Quality Service</span>
             </div>
           </div>
           

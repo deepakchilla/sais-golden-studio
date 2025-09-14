@@ -122,16 +122,9 @@ const Portfolio = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary-dark/90 via-primary-dark/70 to-primary-dark/90" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark via-transparent to-transparent" />
         
-        {/* Floating Elements */}
-        <div className="absolute top-20 left-10 w-20 h-20 bg-primary/10 backdrop-blur-sm border border-primary/20 transform rotate-45 animate-pulse hidden lg:block" />
-        <div className="absolute bottom-32 right-16 w-16 h-16 bg-primary/15 backdrop-blur-sm border border-primary/30 transform rotate-12 animate-bounce hidden lg:block" />
-        
+
         <div className="relative z-10 max-w-6xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-          {/* Award Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/20 backdrop-blur-md border border-primary/30 px-8 py-4 mb-10">
-            <Camera className="h-6 w-6 text-primary" />
-            <span className="text-primary font-poppins font-bold tracking-wider text-base">AWARD-WINNING PORTFOLIO</span>
-          </div>
+
           
           <h1 className="font-playfair text-5xl sm:text-6xl lg:text-7xl font-bold text-primary-dark-foreground mb-8 leading-tight">
             Our <span className="text-primary bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent drop-shadow-2xl">Portfolio</span>
@@ -151,7 +144,7 @@ const Portfolio = () => {
             </div>
             <div className="text-center">
               <h3 className="font-playfair text-3xl font-bold text-primary mb-2">50+</h3>
-              <p className="text-primary-dark-foreground/80 font-poppins font-medium">Award-Winning Shots</p>
+              <p className="text-primary-dark-foreground/80 font-poppins font-medium">Featured Shots</p>
             </div>
             <div className="text-center">
               <h3 className="font-playfair text-3xl font-bold text-primary mb-2">8+</h3>
@@ -183,63 +176,43 @@ const Portfolio = () => {
       {/* Enhanced Portfolio Grid */}
       <section className="py-24 bg-gradient-to-br from-background via-warm-gray/30 to-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {filteredItems.map((item) => (
-              <Card key={item.id} className="group cursor-pointer overflow-hidden bg-background/95 backdrop-blur-sm border border-primary/10 hover:border-primary/30 transition-all duration-500 transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/20">
-                <div className="relative aspect-square overflow-hidden">
+              <Card key={item.id} className="group cursor-pointer overflow-hidden bg-background border border-primary/20 hover:border-primary/40 transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl hover:shadow-primary/10">
+                <div className="relative aspect-[4/3] overflow-hidden">
                   <img 
                     src={item.image} 
                     alt={item.title}
-                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
                   />
                   
-                  {/* Enhanced Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  {/* Clean Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
                   
-                  {/* Category Badge */}
-                  <div className="absolute top-4 left-4 bg-gradient-to-r from-primary/95 to-accent/95 backdrop-blur-sm px-4 py-2 border border-primary/30">
+                  {/* Category Badge - Top Left */}
+                  <div className="absolute top-3 left-3 bg-primary/95 backdrop-blur-sm px-3 py-1">
                     <span className="text-primary-dark font-poppins text-xs font-bold tracking-wider">
                       {item.category.toUpperCase()}
                     </span>
                   </div>
                   
-                  {/* Year Badge */}
-                  <div className="absolute top-4 right-4 bg-background/90 backdrop-blur-sm px-3 py-1 border border-primary/20">
+                  {/* Year Badge - Top Right */}
+                  <div className="absolute top-3 right-3 bg-background/95 backdrop-blur-sm px-3 py-1">
                     <span className="text-primary font-poppins text-xs font-semibold">{item.year}</span>
                   </div>
                   
-                  {/* Enhanced Hover Content */}
-                  <div className="absolute inset-0 flex flex-col justify-center items-center opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-4 group-hover:translate-y-0 p-6">
-                    <div className="text-center mb-6">
-                      <h3 className="font-playfair text-2xl font-bold text-primary-dark-foreground mb-3">
-                        {item.title}
-                      </h3>
-                      <p className="text-primary-dark-foreground/90 font-poppins text-sm mb-4 leading-relaxed">
-                        {item.description}
-                      </p>
-                      
-                      {/* Tags */}
-                      <div className="flex flex-wrap justify-center gap-2 mb-4">
-                        {item.tags.map((tag, tagIndex) => (
-                          <span key={tagIndex} className="bg-primary/20 text-primary px-2 py-1 text-xs font-poppins font-medium border border-primary/30">
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                      
-                      {/* Client Info */}
-                      <p className="text-primary-dark-foreground/70 font-poppins text-xs mb-6">
-                        Client: <span className="text-primary font-semibold">{item.client}</span>
-                      </p>
-                    </div>
-                    
-                    <Button variant="hero" size="sm" className="bg-primary/90 hover:bg-primary text-primary-dark font-semibold transform hover:scale-105 transition-all duration-300">
-                      View Project Details
-                    </Button>
+                  {/* Hover Button - Bottom Center */}
+                  <div className="absolute bottom-4 left-0 right-0 flex justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                    <Link to={`/portfolio/${item.id}`}>
+                      <Button variant="hero" size="sm" className="bg-primary hover:bg-primary/90 text-primary-dark font-semibold border-0 shadow-lg">
+                        View Details
+                      </Button>
+                    </Link>
                   </div>
                 </div>
               </Card>
-            ))}
+            ))
+          }
           </div>
 
           {filteredItems.length === 0 && (

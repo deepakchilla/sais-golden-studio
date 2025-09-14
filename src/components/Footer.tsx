@@ -25,17 +25,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="lg:col-span-1">
-            <Link to="/" className="flex items-center space-x-2 mb-4">
-              <div className="bg-gradient-to-r from-primary to-accent p-2">
-                <Camera className="h-6 w-6 text-primary-dark" />
-              </div>
+            <Link to="/" className="flex items-center mb-4">
               <div className="text-primary-dark-foreground">
-                <span className="font-playfair font-bold text-xl">Sri Sai</span>
-                <span className="text-primary ml-1 font-playfair">Digital</span>
+                <span className="font-serif italic font-medium text-2xl tracking-wide text-white">SRI SAI</span>
+                <span className="text-primary ml-2 font-serif italic font-medium text-2xl tracking-wide">DIGITAL</span>
               </div>
             </Link>
             <p className="text-muted-foreground font-poppins text-sm leading-relaxed">
-              Professional photography services capturing your precious moments with artistic excellence and modern techniques.
+              Photography services capturing your precious moments with artistic excellence and modern techniques.
             </p>
           </div>
 

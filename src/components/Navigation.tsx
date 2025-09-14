@@ -82,13 +82,10 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="bg-gradient-to-r from-primary to-accent p-2">
-              <Camera className="h-6 w-6 text-primary-dark" />
-            </div>
+          <Link to="/" className="flex items-center">
             <div className="text-primary-dark-foreground">
-              <span className="font-playfair font-bold text-xl">Sri Sai</span>
-              <span className="text-primary ml-1 font-playfair">Digital</span>
+              <span className="font-serif italic font-medium text-2xl tracking-wide text-white">SRI SAI</span>
+              <span className="text-primary ml-2 font-serif italic font-medium text-2xl tracking-wide">DIGITAL</span>
             </div>
           </Link>
 
